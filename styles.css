@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.5s ease;
+}
+
+#btnYes {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#btnYes:hover {
+    background-color: #45a049;
+}
+
+#btnNo {
+    background-color: #f44336;
+    color: white;
+    position: static; /* Cambia a relative si es necesario */
+    transition: transform 0.5s ease; /* Transición suave para el movimiento */
+}
+
+.neon-text {
+    position: absolute; /* Posicionamos el texto neon en el centro */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #bb00ff;
+    text-shadow: 0 0 5px #bb00ff, 0 0 10px #bb00ff, 0 0 20px #bb00ff, 0 0 40px #bb00ff;
+    animation: moveText 7s linear infinite;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+@keyframes moveText {
+    0% { transform: translate(-150%, -50%); }
+    100% { transform: translate(50%, -50%); }
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    .buttons {
+        flex-direction: column; /* Botones en columna en móviles */
+        gap: 10px;
+    }
+
+    button {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+        padding: 8px 16px;
+    }
+
+    .neon-text {
+        font-size: 1.2rem; /* Tamaño de fuente más pequeño para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Tamaño de fuente aún más pequeño para pantallas muy pequeñas */
+    }
+
+    .neon-text {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    }
+}
